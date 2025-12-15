@@ -1,0 +1,12 @@
+PyYAML (yaml)             6.0.3
+OpenCV (cv2)              4.12.0
+NumPy                     2.2.6
+Seaborn                   0.13.2
+Pandas                    2.3.3
+Matplotlib                3.10.7
+Pillow (PIL)              12.0.0
+Ultralytics (YOLO)        8.3.235
+Scikit-learn (sklearn)    1.8.0
+Tqdm                      4.67.1
+-----------------------------------
+Python Version: 3.13.9
