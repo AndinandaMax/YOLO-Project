@@ -78,6 +78,9 @@ pip install -r requirements.txt
 
 ## 📊 Dataset Preparation
 
+### Dataset that being used
+Urban Issues Dataset from [Urban Issues Dataset](https://www.kaggle.com/datasets/akinduhiman/urban-issues-dataset)
+
 ### Using the Data Loader Module
 
 ```python
