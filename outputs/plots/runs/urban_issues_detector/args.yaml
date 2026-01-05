@@ -1,8 +1,8 @@
 task: detect
 mode: train
 model: yolo12n.pt
-data: ..\config\data.yaml
-epochs: 10
+data: /kaggle/working/organized_dataset/data.yaml
+epochs: 100
 time: null
 patience: 5
 batch: 64
@@ -10,9 +10,9 @@ imgsz: 640
 save: true
 save_period: -1
 cache: false
-device: cpu
+device: 0,1
 workers: 8
-project: ..\outputs\runs
+project: /kaggle/working/runs
 name: urban_issues_detector
 exist_ok: false
 pretrained: true
@@ -103,4 +103,4 @@ auto_augment: randaugment
 erasing: 0.4
 cfg: null
 tracker: botsort.yaml
-save_dir: C:\Users\Ilham\Documents\Projects\YOLO\YOLO-Project\outputs\runs\urban_issues_detector
+save_dir: /kaggle/working/runs/urban_issues_detector
