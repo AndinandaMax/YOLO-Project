@@ -240,28 +240,28 @@ def main():
     with st.sidebar:
         st.markdown("<h2 style='text-align: center;'>⚙️ CONTROL PANEL</h2>", unsafe_allow_html=True)
         
-        st.markdown("<div class='custom-card'>", unsafe_allow_html=True)
+        # st.markdown("<div class='custom-card'>", unsafe_allow_html=True)
         model_path = st.text_input("🤖 Model Path", value="best.pt", 
                                    help="Path to your YOLO model file")
         confidence_threshold = st.slider("🎯 Confidence Threshold", 
                                         min_value=0.0, max_value=1.0, 
                                         value=0.25, step=0.05)
-        st.markdown("</div>", unsafe_allow_html=True)
+        # st.markdown("</div>", unsafe_allow_html=True)
         
-        st.markdown("<div class='custom-card'>", unsafe_allow_html=True)
+        # st.markdown("<div class='custom-card'>", unsafe_allow_html=True)
         st.markdown("<h3>📋 Detectable Issues</h3>", unsafe_allow_html=True)
         for idx, name in CLASS_NAMES.items():
             st.markdown(f"{CLASS_EMOJI[idx]} {name}")
         st.markdown("</div>", unsafe_allow_html=True)
         
-        st.markdown("<div class='custom-card'>", unsafe_allow_html=True)
+        # st.markdown("<div class='custom-card'>", unsafe_allow_html=True)
         st.markdown("<h3>ℹ️ About</h3>", unsafe_allow_html=True)
         st.markdown("""
         This AI system detects various urban infrastructure issues using 
-        state-of-the-art YOLO object detection.
+        YOLO object detection.
         
-        **Developer:** Your Name  
-        **Model:** YOLOv8/v11  
+        
+        **Model:** YOLOv12n\n
         **Classes:** 10 Urban Issues
         """)
         st.markdown("</div>", unsafe_allow_html=True)
@@ -270,7 +270,7 @@ def main():
     col1, col2 = st.columns([1, 1])
     
     with col1:
-        st.markdown("<div class='custom-card'>", unsafe_allow_html=True)
+        # st.markdown("<div class='custom-card'>", unsafe_allow_html=True)
         st.markdown("<h2>📤 UPLOAD IMAGE</h2>", unsafe_allow_html=True)
         uploaded_file = st.file_uploader(
             "Choose an image...", 
@@ -284,14 +284,14 @@ def main():
             st.image(image, caption="Original Image", use_column_width=True)
     
     with col2:
-        st.markdown("<div class='custom-card'>", unsafe_allow_html=True)
+        # st.markdown("<div class='custom-card'>", unsafe_allow_html=True)
         st.markdown("<h2>🔍 DETECTION RESULTS</h2>", unsafe_allow_html=True)
         
         if uploaded_file:
             if st.button("🚀 RUN DETECTION", use_container_width=True):
                 with st.spinner("🔄 AI Processing..."):
                     # Load model
-                    model = load_model(model_path)
+                    model = load_model(model_path=f"../outputs/models/{model_path}")
                     
                     if model:
                         # Run prediction
