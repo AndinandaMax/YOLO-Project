@@ -291,7 +291,8 @@ def main():
             if st.button("🚀 RUN DETECTION", use_container_width=True):
                 with st.spinner("🔄 AI Processing..."):
                     # Load model
-                    model = load_model(model_path=f"../outputs/models/{model_path}")
+                    # src_path = "../outputs/models/best.pt"
+                    model = load_model(model_path=f"outputs/models/{model_path}") #outputs\models\best.pt
                     
                     if model:
                         # Run prediction
